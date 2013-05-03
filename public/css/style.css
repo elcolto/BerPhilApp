@@ -1,0 +1,22 @@
+.animated_object{
+	border: 1px solid #000;
+	text-align: center;
+	font-size: 32px;
+	width: 100px;
+	height: 100px;
+}
+#object1{
+	background-color: red;
+}
+#object2{
+	background-color: green;
+}
+#object3{
+	background-color: yellow;
+}
+#object4{
+	background-color: gray;
+}
+#object5{
+	background-color: blue;
+}
