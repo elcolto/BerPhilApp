@@ -1,6 +1,12 @@
 $(document).ready(function(){
-	$('#object1').hammer().on('doubletap', function(ev){
-		$();
+	$('.animated_object').hammer().on('doubletap', function(ev){
+		ev.preventDefault();
+		$('#info').show('slow');
+	});
+
+	$('#info').hammer().on('doubletap', function(ev){
+		ev.preventDefault();
+		$(this).fadeOut();
 	});
 });
 

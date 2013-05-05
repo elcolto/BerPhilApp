@@ -20,3 +20,15 @@
 #object5{
 	background-color: blue;
 }
+
+#info{
+	display: none;
+	position: fixed;
+	font-family: serif;
+	top: 10px;
+	left: 40px;
+	width: 30%;
+	height: 30%;
+	padding: 1%;
+	background-color: rgb(212, 164, 112);
+}
