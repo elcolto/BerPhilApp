@@ -8,6 +8,10 @@ $(document).ready(function(){
 		ev.preventDefault();
 		$(this).fadeOut();
 	});
+
+	$(function(){
+		$('.get_pop').draggable();
+	});
 });
 
 
