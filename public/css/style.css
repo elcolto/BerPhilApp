@@ -144,6 +144,16 @@ a.get_pop:hover{
 	overflow: auto;
 }
 
+#snappable{
+    border:1px solid;
+    position:absolute;
+    top:40px;
+    left:600px;
+    height:110px;
+    width:120px;
+    
+}
+
 #info{
 	display: none;
 	position: fixed;

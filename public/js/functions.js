@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+	
+
+
 	$('.animated_object').hammer().on('doubletap', function(ev){
 		ev.preventDefault();
 		$('#info').show('slow');
@@ -10,7 +14,7 @@ $(document).ready(function(){
 	});
 
 	$(function(){
-		$('.get_pop').draggable();
+		$('.get_pop').draggable({snap: '#snappable', snapMode:'inner'});
 	});
 });
 
