@@ -1,48 +1,29 @@
 
-$(document).ready(function(){
+function rotate(){
+	var rotateObject = $('#object5');
+};
 
+function hideAndShow(objectName){
 	
-	$('.animated_object').hammer().on('doubletap', function(ev){
-		ev.preventDefault();
-		$('#info').show('slow');
-	});
-
-	$('#info').hammer().on('doubletap', function(ev){
-		ev.preventDefault();
-		$(this).fadeOut();
-	});
-
-	$('#bug').hammer().on('tap', function(ev){
-		ev.preventDefault();
-		$(this).fadeOut('slow');
-		clearTimeout();	
-	});
-
-	$(function(){
-		$('.get_pop').draggable({snap: '#snappable', snapMode:'inner'});
-		
-	});
-	var newPosition=function (){
+	if ($(objectName).css('display') != 'none') {
+		$(objectName).toggle('slow');
+	}
+	//random position
 	var width = $(window).width();
 	var height = $(window).height();
-	var x = Math.random()*(width - 50);
-	var y = Math.random()*(height - 50);
-		
-		
-		$('#bug').css({'left':x,
-						'top':y});
-		$('#bug').show('slow');
-		//$('#bug').fadeOut('slow');
-
-	setTimeout(newPosition, 2000);
+	var x = Math.floor(Math.random()*(width - 50));
+	var y = Math.floor(Math.random()*(height - 50));
+	
+	// if object is not displayed: 1. change position, 2. display objec
+	// is it display: reverse sequence
+	if ($(objectName).css('display') == 'none') {
+		$(objectName).css({'left':x, 'top':y});
+		$(objectName).toggle('slow');
 	}
-	newPosition();
-
-
-});
-
-
-
-$(function(){
-	var rotateObject = $('#object5');
-});
+	else{
+		//set delay to prevent "slowness" of function toggle
+		setTimeout(function(){
+			$(objectName).css({'left':x, 'top':y});
+		}, 350);
+	}
+};
