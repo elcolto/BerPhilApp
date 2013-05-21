@@ -159,7 +159,6 @@ a.get_pop:hover{
     height:50px;
     position:absolute;
     background-image: url(../img/bug1.png);
- /*   background-color: yellow;
-   */ 
+    display:none;
 }
 
