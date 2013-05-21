@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 //	behavior of #bug
 	var bug = document.getElementById('bug');
-	var bugInterval = setInterval("hideAndShow("+bug.id+")", 2000);
+	var bugInterval = setInterval("hideAndShow("+bug.id+")", 5000);
 
 	$(bug).hammer().on('tap', function(ev){
 		ev.preventDefault();
