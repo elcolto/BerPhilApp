@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 
 	$(function(){
-		$('.get_pop').draggable({snap: '#snappable', snapMode:'inner'});
+		$('.object_draggable').draggable({snap: '#snappable', snapMode:'inner'});
 	});
 
 //	behavior of #bug

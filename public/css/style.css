@@ -14,11 +14,20 @@ body{
     height: 100%;
     margin: 0 auto -4em;
 }
-.container{
+/*.container{
     width: 80% !important;
+}*/
+@media (max-width: 1536px) and (min-width: 768px){
+    .main_bg_barock{
+        background: url(../img/bg_main_image@2x.png) no-repeat center bottom;
+    }
+}
+@media (max-width: 767px){
+    .main_bg_barock{
+        background: url(../img/bg_main_image.png) no-repeat center bottom;
+    }
 }
 .main_bg_barock{
-    background: url(../img/bg_main_image.png) no-repeat center;
     background-size: contain;
     background-color: gray;
 }
@@ -36,8 +45,25 @@ body{
 	width: 100px;
 	height: 100px;
 }*/
-#object1{
-	background-color: red;
+#objects{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+#object_stage{
+	position: absolute;
+    left: 50%;
+    top: 10%;
+    cursor: pointer;
+    background: url(../img/stage_s.png) no-repeat;
+    background-size: contain;
+    width: 20%;
+    height: 18%;
+    transform: rotate(18deg) ;
+    -webkit-transform: rotate(18deg) ;
+    -moz-transform: rotate(18deg) ;
+    -o-transform: rotate(18deg) ;
+    -ms-transform: rotate(18deg) ;
 }
 #object2{
 	background-color: green;
@@ -108,11 +134,20 @@ a.get_pop:hover{
     visibility: hidden;
     z-index: 10;
 
+    width: 90%;
+    height: 90%;
+    /*
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    */
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -133,7 +168,8 @@ a.get_pop:hover{
     transition: opacity .5s, top .5s;
 }
 .overlay:target+.popup {
-    top: 50%;
+    /*top: 50%;*/
+    top: 4%;
     opacity: 1;
     visibility: visible;
 }
