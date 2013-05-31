@@ -17,12 +17,12 @@ body{
 /*.container{
     width: 80% !important;
 }*/
-@media (max-width: 1536px) and (min-width: 768px){
+@media (max-width: 1536px) and (min-width: 769px){
     .main_bg_barock{
         background: url(../img/bg_main_image@2x.png) no-repeat center bottom;
     }
 }
-@media (max-width: 767px){
+@media (max-width: 768px){
     .main_bg_barock{
         background: url(../img/bg_main_image.png) no-repeat center bottom;
     }
