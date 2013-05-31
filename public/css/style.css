@@ -17,12 +17,12 @@ body{
 /*.container{
     width: 80% !important;
 }*/
-@media (max-width: 1536px) and (min-width: 769px){
+@media (max-width: 1536px) and (min-width: 768px){
     .main_bg_barock{
         background: url(../img/bg_main_image@2x.png) no-repeat center bottom;
     }
 }
-@media (max-width: 768px){
+@media (max-width: 767px){
     .main_bg_barock{
         background: url(../img/bg_main_image.png) no-repeat center bottom;
     }
@@ -49,6 +49,7 @@ body{
     position: relative;
     height: 100%;
     width: 100%;
+    z-index: 0;
 }
 #object_stage{
 	position: absolute;
@@ -222,5 +223,6 @@ a.get_pop:hover{
     position:absolute;
     background-image: url(../img/bug1.png);
     display:none;
+    z-index: 5;
 }
 
