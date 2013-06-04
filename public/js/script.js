@@ -91,21 +91,6 @@ $(document).ready(function(){
 		}
 	};
 
-	$('.animated_object').hammer().on('doubletap', function(ev){
-		ev.preventDefault();
-		$('#info').show('slow');
-	});
-
-	$('#info').hammer().on('doubletap', function(ev){
-		ev.preventDefault();
-		$(this).fadeOut();
-	});
-
-
-	$(function(){
-		$('.object_draggable').draggable({snap: '#snappable', snapMode:'inner'});
-	});
-
 	//	behavior of #bug
 	var bug = new Bug(100, 100, Math.floor(screenWidth*0.25), 4000)
 	$('#bug').hammer().on('tap', function(ev){
@@ -114,27 +99,50 @@ $(document).ready(function(){
 	});
 
 	//coffee
+	var beanCounter = 0;
+	var beanTapped = false;
+	var showSpeechBubble = false;
 	$('.bean').hammer().on('tap', function(ev){
 		ev.preventDefault();
-		$('.bean').draggable();
-		$('.bean').addClass('draggable');
-		$('.bean .draggable').draggable({snap: '#cup-snap', snapMode: 'inner'});
-	});
-
-	var counter = 0;
-	$('.bean').on('dragstop', function(event, ui){
-		var right = (ui.position.left + $(this).width());
-		var bottom = (ui.position.top + $(this).height());
-
-		if (bottom >205 && bottom < 230 && right < 303 && right > 115) {
-			$(this).toggle();
-			$(this).draggable({disabled: true});
-			counter++;
+		if (!beanTapped) {
+			$('#cup').animate({
+			"bottom":"0px"
+			}, 1500);
+			$('#speech-bubble').fadeIn('slow');
+			showSpeechBubble = true;
+			beanTapped = true;
+		
+		
+			$('.bean').draggable();
+			$('.bean').addClass('draggable');
+			$('.bean .draggable').draggable({snap: '#cup-snap', snapMode: 'inner',});
+			$(".bean").draggable({
+			    drag: function(event, ui) {
+			        var draggable = $(this).data("ui-draggable");
+			        $.each(draggable.snapElements, function(index, element) {
+			            if (element.snapping) {
+			                draggable._trigger("snapped", event, $.extend({}, ui, {
+			                    snapElement: $(element.item)
+			                }));
+			            }
+			        });
+			    },
+			    snap: "#cup-snap",
+			    snapped: function(event, ui) {
+			        // Do something with 'ui.snapElement'...
+			        $(this).toggle();
+			        beanCounter++;
+			        if(beanCounter == 4){
+			        	$('#cup').animate()
+			        }
+			    }
+			});
 		}
-
-		if (counter == 4) {
-
-		}
 	});
-
+	if (showSpeechBubble) {
+		$('.bean').hammer().on('dragstart', function(ev){
+			$('#speech-bubble').fadeOut('slow');
+		});
+	}
+	
 });
