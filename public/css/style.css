@@ -17,27 +17,91 @@ body{
 /*.container{
     width: 80% !important;
 }*/
-@media (max-width: 1536px) and (min-width: 768px){
+
+/*................iPad-Retina................*/
+@media (max-width: 1536px) and (min-width: 769px){
     .main_bg_barock{
         background: url(../img/bg_main_image@2x.png) no-repeat center bottom;
+        height: 2048px;
+    }
+    section#objects{
+        height: 1196px;
+        width: 1180px;
+        padding-top: 184px;
+    }
+    section#objects #object_stage{
+        background: url(../img/stage_s@2x.png) no-repeat;
+        width: 300px;
+        height: 350px;
+        left: 664px;
+    }
+    #cup{
+        background: url(../img/tasse@2x.png) no-repeat;
+        width: 815px;
+        height: 536px;
+    }
+    #cup-snap{
+        width: 376px;
+        height: 50px;
+        right: 230px;
+        bottom: 460px;
+    }
+    section#objects .bean{
+        background: url(../img/bean@2x.png) no-repeat;
+        width: 150px;
+        height: 100px;
+        left: 230px;
+        top: 310px;
     }
 }
-@media (max-width: 767px){
+/*..............iPad................*/
+@media (max-width: 768px){
     .main_bg_barock{
         background: url(../img/bg_main_image.png) no-repeat center bottom;
+        height: 1024px;
+    }
+    section#objects{
+        height: 598px;
+        width: 590px;
+        padding-top: 92px;
+    }
+    section#objects #object_stage{
+        background: url(../img/stage_s.png) no-repeat;
+        width: 150px;
+        height: 175px;
+        left: 332px;
+    }
+    #cup{
+        background: url(../img/tasse.png) no-repeat;
+        width: 408px;
+        height: 268px;
+    }
+    #cup-snap{
+        width: 188px;
+        height: 25px;
+        right: 115px;
+        bottom: 230px;
+    }
+    section#objects .bean{
+        background: url(../img/bean.png) no-repeat;
+        width: 75px;
+        height: 50px;
+        left: 115px;
+        top: 155px;
     }
 }
 .main_bg_barock{
+    position: relative;
     background-size: contain;
     background-color: gray;
 }
-#content{
+/*#content{
     position: absolute;
     top: 0;
     bottom: 0;
     left: 10%;
     right: 10%;
-}
+}*/
 /*.animated_object{
 	border: 1px solid #000;
 	text-align: center;
@@ -45,21 +109,14 @@ body{
 	width: 100px;
 	height: 100px;
 }*/
-#objects{
+section#objects{
     position: relative;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
+    z-index: 1;
 }
-#object_stage{
+section#objects #object_stage{
 	position: absolute;
-    left: 50%;
-    top: 10%;
     cursor: pointer;
-    background: url(../img/stage_s.png) no-repeat;
     background-size: contain;
-    width: 20%;
-    height: 18%;
     transform: rotate(18deg) ;
     -webkit-transform: rotate(18deg) ;
     -moz-transform: rotate(18deg) ;
@@ -207,21 +264,27 @@ a.get_pop:hover{
 	overflow: auto;
 }
 
-#snappable{
-    border:1px solid;
-    position:absolute;
-    top:40px;
-    left:600px;
-    height:110px;
-    width:120px;
-    display:none;
+#cup{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+}
+#cup-snap{
+    z-index: 60;
+    position: absolute;
+    background-color: red;
+}
+section#objects .bean{
+    position: absolute;
+    z-index: 10;
 }
 
 #bug{
     width:50px;
     height:50px;
     position:absolute;
-    background-image: url(../img/bug1.png);
+    background-image: url(../img/bug1.png) no-repeat;
     display:none;
     z-index: 5;
 }
