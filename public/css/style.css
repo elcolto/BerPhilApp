@@ -7,7 +7,9 @@ body{
     padding: 0;
     height: 100%
 }
-
+#page{
+    overflow: hidden;
+}
 .main_container {
     min-height: 100%;
     height: auto !important;
@@ -39,6 +41,7 @@ body{
         background: url(../img/tasse@2x.png) no-repeat;
         width: 815px;
         height: 536px;
+        bottom: -536px;
     }
     #cup-snap{
         width: 376px;
@@ -52,6 +55,16 @@ body{
         height: 100px;
         left: 230px;
         top: 310px;
+    }
+    #speech_bubble{
+        background: url(../img/speech_bubble@2x.png) no-repeat;
+        font-size: 2em;
+        line-height: 40px;
+        padding: 190px 120px 0 120px;
+        width: 608px;
+        height: 420px;
+        left: 10px;
+        top: 910px;
     }
 }
 /*..............iPad................*/
@@ -75,6 +88,7 @@ body{
         background: url(../img/tasse.png) no-repeat;
         width: 408px;
         height: 268px;
+        bottom: -268px;
     }
     #cup-snap{
         width: 188px;
@@ -88,6 +102,16 @@ body{
         height: 50px;
         left: 115px;
         top: 155px;
+    }
+    #speech_bubble{
+        background: url(../img/speech_bubble.png) no-repeat;
+        font-size: 2em;
+        line-height: 40px;
+        padding: 95px 60px 0 60px;
+        width: 304px;
+        height: 210px;
+        left: 5px;
+        top: 455px;
     }
 }
 .main_bg_barock{
@@ -267,11 +291,8 @@ a.get_pop:hover{
 #cup{
     position: absolute;
     right: 0;
-    bottom: 0;
-    z-index: 50;
 }
 #cup-snap{
-    z-index: 60;
     position: absolute;
     background-color: red;
 }
@@ -279,12 +300,15 @@ section#objects .bean{
     position: absolute;
     z-index: 10;
 }
+#speech_bubble{
+    position: absolute;
+}
 
 #bug{
     width:50px;
     height:50px;
     position:absolute;
-    background-image: url(../img/bug1.png) no-repeat;
+    background-image: url(../img/bug1.png);
     display:none;
     z-index: 5;
 }
