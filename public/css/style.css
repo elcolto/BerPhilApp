@@ -14,7 +14,7 @@ body{
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -4em;
+    /*margin: 0 auto -4em;*/
 }
 /*.container{
     width: 80% !important;
@@ -25,6 +25,7 @@ body{
     .main_bg_barock{
         background: url(../img/bg_main_image@2x.png) no-repeat center bottom;
         height: 2048px;
+        width: 1536px;
     }
     section#objects{
         height: 1196px;
@@ -53,8 +54,28 @@ body{
         background: url(../img/bean@2x.png) no-repeat;
         width: 150px;
         height: 100px;
+    }
+    section#objects #bean_1{
         left: 230px;
         top: 310px;
+    }
+    section#objects #bean_2{
+        left: 874px;
+        top: 914px;
+        transform: rotate(330deg) ;
+        -webkit-transform: rotate(330deg) ;
+        -moz-transform: rotate(330deg) ;
+        -o-transform: rotate(330deg) ;
+        -ms-transform: rotate(330deg) ;
+    }
+    section#objects #bean_3{
+        left: 780px;
+        top: 520px;
+        transform: rotate(280deg) ;
+        -webkit-transform: rotate(280deg) ;
+        -moz-transform: rotate(280deg) ;
+        -o-transform: rotate(280deg) ;
+        -ms-transform: rotate(280deg) ;
     }
     #speech_bubble{
         background: url(../img/speech_bubble@2x.png) no-repeat;
@@ -72,6 +93,7 @@ body{
     .main_bg_barock{
         background: url(../img/bg_main_image.png) no-repeat center bottom;
         height: 1024px;
+        width: 768px;
     }
     section#objects{
         height: 598px;
@@ -100,8 +122,28 @@ body{
         background: url(../img/bean.png) no-repeat;
         width: 75px;
         height: 50px;
+    }
+    section#objects #bean_1{
         left: 115px;
         top: 155px;
+    }
+    section#objects #bean_2{
+        left: 437px;
+        top: 457px;
+        transform: rotate(330deg) ;
+        -webkit-transform: rotate(330deg) ;
+        -moz-transform: rotate(330deg) ;
+        -o-transform: rotate(330deg) ;
+        -ms-transform: rotate(330deg) ;
+    }
+    section#objects #bean_3{
+        left: 390px;
+        top: 260px;
+        transform: rotate(280deg) ;
+        -webkit-transform: rotate(280deg) ;
+        -moz-transform: rotate(280deg) ;
+        -o-transform: rotate(280deg) ;
+        -ms-transform: rotate(280deg) ;
     }
     #speech_bubble{
         background: url(../img/speech_bubble.png) no-repeat;
@@ -146,6 +188,7 @@ section#objects #object_stage{
     -moz-transform: rotate(18deg) ;
     -o-transform: rotate(18deg) ;
     -ms-transform: rotate(18deg) ;
+    z-index: 10;
 }
 #object2{
 	background-color: green;
