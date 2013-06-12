@@ -108,7 +108,10 @@ $(document).ready(function(){
 			$('#cup').animate({
 			"bottom":"0px"
 			}, 1500);
-			$('#speech-bubble').fadeIn('slow');
+			setTimeout(function(){
+				$('#speech_bubble').fadeToggle(2000);
+			},1500);
+			
 			showSpeechBubble = true;
 			beanTapped = true;
 		
@@ -139,10 +142,10 @@ $(document).ready(function(){
 			});
 		}
 	});
-	if (showSpeechBubble) {
+//	if (showSpeechBubble) {
 		$('.bean').hammer().on('dragstart', function(ev){
-			$('#speech-bubble').fadeOut('slow');
+			$('#speech_bubble').fadeOut(2000);
 		});
-	}
+//	}
 	
 });

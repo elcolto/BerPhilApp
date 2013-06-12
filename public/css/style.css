@@ -302,6 +302,7 @@ section#objects .bean{
 }
 #speech_bubble{
     position: absolute;
+    display: none;
 }
 
 #bug{
