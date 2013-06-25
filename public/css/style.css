@@ -11,89 +11,22 @@ body{
     overflow: hidden;
 }
 .main_container {
+    /*
     min-height: 100%;
     height: auto !important;
-    height: 100%;
+    height: 100%; */
+    background: url(../img/bg_main_woman@2x.jpg) no-repeat;
+    background-size: contain;
     /*margin: 0 auto -4em;*/
 }
 /*.container{
     width: 80% !important;
 }*/
 
-/*................iPad-Retina................*/
-@media (max-width: 1536px) and (min-width: 769px){
-    .main_bg_barock{
-        background: url(../img/bg_main_image@2x.png) no-repeat center bottom;
-        height: 2048px;
-        width: 1536px;
-    }
-    section#objects{
-        height: 1196px;
-        width: 1180px;
-        padding-top: 184px;
-    }
-    section#objects #object_stage{
-        background: url(../img/stage_s@2x.png) no-repeat;
-        width: 300px;
-        height: 350px;
-        left: 664px;
-    }
-    #cup{
-        background: url(../img/tasse@2x.png) no-repeat;
-        width: 815px;
-        height: 536px;
-        bottom: -536px;
-    }
-    #cup-snap{
-        width: 376px;
-        height: 50px;
-        right: 230px;
-        bottom: 460px;
-    }
-    section#objects .bean{
-        background: url(../img/bean@2x.png) no-repeat;
-        width: 150px;
-        height: 100px;
-    }
-    section#objects #bean_1{
-        left: 230px;
-        top: 310px;
-    }
-    section#objects #bean_2{
-        left: 874px;
-        top: 914px;
-        transform: rotate(330deg) ;
-        -webkit-transform: rotate(330deg) ;
-        -moz-transform: rotate(330deg) ;
-        -o-transform: rotate(330deg) ;
-        -ms-transform: rotate(330deg) ;
-    }
-    section#objects #bean_3{
-        left: 780px;
-        top: 520px;
-        transform: rotate(280deg) ;
-        -webkit-transform: rotate(280deg) ;
-        -moz-transform: rotate(280deg) ;
-        -o-transform: rotate(280deg) ;
-        -ms-transform: rotate(280deg) ;
-    }
-    #speech_bubble{
-        background: url(../img/speech_bubble@2x.png) no-repeat;
-        font-size: 2em;
-        line-height: 40px;
-        padding: 190px 120px 0 120px;
-        width: 608px;
-        height: 420px;
-        left: 10px;
-        top: 910px;
-    }
-}
 /*..............iPad................*/
-@media (max-width: 768px){
+@media (min-width: 768px){
     .main_bg_barock{
-        background: url(../img/bg_main_image.png) no-repeat center bottom;
-        height: 1024px;
-        width: 768px;
+        height: 1004px;
     }
     section#objects{
         height: 598px;
@@ -108,42 +41,34 @@ body{
     }
     #cup{
         background: url(../img/tasse.png) no-repeat;
-        width: 408px;
-        height: 268px;
-        bottom: -268px;
+        width: 343px;
+        height: 280px;
+        bottom: -280px;
     }
     #cup-snap{
-        width: 188px;
-        height: 25px;
-        right: 115px;
-        bottom: 230px;
+        width: 190px;
+        height: 50px;
+        right: 86px;
+        bottom: 226px;
     }
     section#objects .bean{
-        background: url(../img/bean.png) no-repeat;
-        width: 75px;
-        height: 50px;
+        width: 48px;
+        height: 43px;
     }
     section#objects #bean_1{
-        left: 115px;
-        top: 155px;
+        background: url(../img/bean1.png) no-repeat;
+        left: 234px;
+        top: 130px;
     }
     section#objects #bean_2{
-        left: 437px;
-        top: 457px;
-        transform: rotate(330deg) ;
-        -webkit-transform: rotate(330deg) ;
-        -moz-transform: rotate(330deg) ;
-        -o-transform: rotate(330deg) ;
-        -ms-transform: rotate(330deg) ;
+        background: url(../img/bean2.png) no-repeat;
+        left: 464px;
+        top: 150px;
     }
     section#objects #bean_3{
-        left: 390px;
-        top: 260px;
-        transform: rotate(280deg) ;
-        -webkit-transform: rotate(280deg) ;
-        -moz-transform: rotate(280deg) ;
-        -o-transform: rotate(280deg) ;
-        -ms-transform: rotate(280deg) ;
+        background: url(../img/bean3.png) no-repeat;
+        left: 64px;
+        top: 480px;
     }
     #speech_bubble{
         background: url(../img/speech_bubble.png) no-repeat;
@@ -156,10 +81,67 @@ body{
         top: 455px;
     }
 }
+/*................iPad-Retina................*/
+@media (min-width: 1536px){
+    .main_bg_barock{
+        height: 2008px;
+    }
+    section#objects{
+        height: 1196px;
+        width: 1180px;
+        padding-top: 184px;
+    }
+    section#objects #object_stage{
+        background: url(../img/stage_s@2x.png) no-repeat;
+        width: 300px;
+        height: 350px;
+        left: 664px;
+    }
+    #cup{
+        background: url(../img/tasse@2x.png) no-repeat;
+        width: 686px;
+        height: 560px;
+        bottom: -560px;
+    }
+    #cup-snap{
+        width: 380px;
+        height: 100px;
+        right: 172px;
+        bottom: 452px;
+    }
+    section#objects .bean{
+        width: 96px;
+        height: 86px;
+    }
+    section#objects #bean_1{
+        background: url(../img/bean1@2x.png) no-repeat;
+        left: 468px;
+        top: 260px;
+    }
+    section#objects #bean_2{
+        background: url(../img/bean2@2x.png) no-repeat;
+        left: 928px;
+        top: 300px;
+    }
+    section#objects #bean_3{
+        background: url(../img/bean3@2x.png) no-repeat;
+        left: 128px;
+        top: 960px;
+    }
+    #speech_bubble{
+        background: url(../img/speech_bubble@2x.png) no-repeat;
+        font-size: 2em;
+        line-height: 40px;
+        padding: 190px 120px 0 120px;
+        width: 608px;
+        height: 420px;
+        left: 10px;
+        top: 910px;
+    }
+}
+
 .main_bg_barock{
     position: relative;
-    background-size: contain;
-    background-color: gray;
 }
 /*#content{
     position: absolute;
