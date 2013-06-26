@@ -1,9 +1,13 @@
+document.ontouchmove = function(e) { e.preventDefault(); }
+
 $(document).ready(function(){
+
+	
 
 	var screenWidth = $("#content").width(); //$(window).width();
 	var screenHeight = $("#content").height(); //$(window).height();
 
-	function Bug(x, y, radius, interval){
+/*	function Bug(x, y, radius, interval){
 		this.x = x;
 		this.y = y;
 		this.interval = interval;
@@ -89,7 +93,7 @@ $(document).ready(function(){
 				delay = setInterval(hideAndShow, bug.interval);
 			}, 2*60*1000);
 		}
-	};
+	};*/
 
 	//	behavior of #bug
 	var bug = new Bug(100, 100, Math.floor(screenWidth*0.25), 4000)
@@ -135,8 +139,9 @@ $(document).ready(function(){
 			        // Do something with 'ui.snapElement'...
 			        $(this).toggle();
 			        beanCounter++;
-			        if(beanCounter == 4){
-			        	$('#cup').animate()
+			        if(beanCounter == 3){
+			        	$('#speech_bubble p').text("sehr gut, du hast alle bohnen gefunden.");
+			        	$('#speech_bubble').fadeToggle(2000);
 			        }
 			    }
 			});
