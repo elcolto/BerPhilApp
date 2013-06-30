@@ -39,6 +39,10 @@ body{
         height: 175px;
         left: 332px;
     }
+    #bug{
+        width:54px;
+        height:54px;
+    }
     #cup{
         background: url(../img/tasse.png) no-repeat;
         width: 343px;
@@ -80,6 +84,14 @@ body{
         left: 5px;
         top: 455px;
     }
+
+    #coffee_sonata{
+        background: url(../img/kaffehauskontate_bg.png) no-repeat left;
+        width: 758px;
+        height: 218px;
+        bottom: 51px;
+        right: -758px;
+    }
 }
 /*................iPad-Retina................*/
 @media (min-width: 1536px){
@@ -96,6 +108,10 @@ body{
         width: 300px;
         height: 350px;
         left: 664px;
+    }
+    #bug{
+        width:108px;
+        height:108px;
     }
     #cup{
         background: url(../img/tasse@2x.png) no-repeat;
@@ -137,6 +153,14 @@ body{
         height: 420px;
         left: 10px;
         top: 910px;
+    }
+
+    #coffee_sonata{
+        background: url(../img/kaffehauskontate_bg@2x.png) no-repeat left;
+        width: 1516px;
+        height: 436px;
+        bottom: 102px;
+        right: -1516px;
     }
 }
 
@@ -316,10 +340,12 @@ a.get_pop:hover{
 #cup{
     position: absolute;
     right: 0;
+    z-index: 15;
 }
 #cup-snap{
     position: absolute;
     background-color: red;
+    z-index: 20;
 }
 section#objects .bean{
     position: absolute;
@@ -330,11 +356,15 @@ section#objects .bean{
     display: none;
 }
 
+#coffee_sonata{
+    position: absolute;
+    z-index: 12;
+}
+
 #bug{
-    width:50px;
-    height:50px;
     position:absolute;
-    background-image: url(../img/bug1.png);
+    background-image: url(../img/bug.png);
+    background-size: contain;
     display:none;
     z-index: 5;
 }
