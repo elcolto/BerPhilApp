@@ -40,6 +40,7 @@ body{
         left: 332px;
     }
     #bug{
+        background-image: url(../img/bug.png);
         width:54px;
         height:54px;
     }
@@ -61,8 +62,8 @@ body{
     }
     section#objects #bean_1{
         background: url(../img/bean1.png) no-repeat;
-        left: 234px;
-        top: 130px;
+        left: 250px;
+        top: 220px;
     }
     section#objects #bean_2{
         background: url(../img/bean2.png) no-repeat;
@@ -71,8 +72,8 @@ body{
     }
     section#objects #bean_3{
         background: url(../img/bean3.png) no-repeat;
-        left: 64px;
-        top: 480px;
+        left: 472px;
+        top: 484px;
     }
     #speech_bubble{
         background: url(../img/speech_bubble.png) no-repeat;
@@ -110,6 +111,7 @@ body{
         left: 664px;
     }
     #bug{
+        background-image: url(../img/bug@2x.png);
         width:108px;
         height:108px;
     }
@@ -131,8 +133,8 @@ body{
     }
     section#objects #bean_1{
         background: url(../img/bean1@2x.png) no-repeat;
-        left: 468px;
-        top: 260px;
+        left: 500px;
+        top: 440px;
     }
     section#objects #bean_2{
         background: url(../img/bean2@2x.png) no-repeat;
@@ -141,8 +143,8 @@ body{
     }
     section#objects #bean_3{
         background: url(../img/bean3@2x.png) no-repeat;
-        left: 128px;
-        top: 960px;
+        left: 944px;
+        top: 968px;
     }
     #speech_bubble{
         background: url(../img/speech_bubble@2x.png) no-repeat;
@@ -363,7 +365,6 @@ section#objects .bean{
 
 #bug{
     position:absolute;
-    background-image: url(../img/bug.png);
     background-size: contain;
     display:none;
     z-index: 5;
