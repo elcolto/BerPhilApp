@@ -1,3 +1,4 @@
+//scrollen verhindern
 document.ontouchmove = function(e) { e.preventDefault(); }
 
 $(document).ready(function(){
@@ -5,6 +6,7 @@ $(document).ready(function(){
 	
 	var screenWidth = $("#content").width(); //$(window).width();
 	var screenHeight = $("#content").height(); //$(window).height();
+	var coffeePlayer = $("#coffee-audio")[0];
 
 	//	behavior of #bug
 	var bug = new Bug(100, 100, Math.floor(screenWidth*0.25), 4000)
@@ -32,9 +34,6 @@ $(document).ready(function(){
 			showSpeechBubble = true;
 			beanTapped = true;
 		
-		
-		//	$('.bean').draggable();
-		//	$('.bean').addClass('draggable');
 			$('.bean').draggable({snap: '#cup-snap', snapMode: 'outer',});
 			$(".bean").draggable({
 			    drag: function(event, ui) {
@@ -68,13 +67,11 @@ $(document).ready(function(){
 							$('#coffee_sonata').animate({
 								"right":"0px"
 							}, 2000);
-						}, 5500);
+						}, 3500);
 		        		beanCounter=0;
-		        		$(document).hammer().on('tap', kantata_handler);
-		        	/*	$('#coffee_sonata').hammer().off('tap', kantata_handler);
-		        		$('#cup').hammer().off('tap', kantata_handler);
-*/
-
+		        	//	$(document).hammer().on('tap', kantata_handler);
+		        		$('#coffee_sonata').hammer().on('swiperight', kantata_handler);
+		        		$('#cup').hammer().on('swipedown', kantata_handler);
 		        	}
 			    }
 			});
@@ -86,11 +83,26 @@ $(document).ready(function(){
 		});
 //	}
 	var kantata_handler = function(event){
+		if (!coffeePlayer.paused) {
+			$('#coffeplay').css('background-color', 'red');
+			coffeePlayer.pause();
+		};
 		$('#coffee_sonata').animate({
 			"left":screenWidth+1+"px"
 		}, 2000);
 		$('#cup').animate({"bottom":"-280px"}, 2000 );
-		$(document).hammer().off('tap', kantata_handler);
 	};
+
+	$('#coffeplay').hammer().on('tap', function(){
+		if (coffeePlayer.paused) {
+			$('#coffeplay').css('background-color', 'yellow');
+			coffeePlayer.play();
+		}
+
+		else{
+			$('#coffeplay').css('background-color', 'red');
+			coffeePlayer.pause();
+		}
+	});
 	
 });

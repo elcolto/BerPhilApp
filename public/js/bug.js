@@ -72,7 +72,7 @@ function Bug(x, y, radius, interval){
 		}
 
 		this.destroy = function(){
-			playAudio('bug-audio');
+			$('#bug-audio').play();
 			curve.stop();
 			$("#bug").css('background-image', 'url(./public/img/blood.png)');
 			clearInterval(delay);
@@ -80,8 +80,8 @@ function Bug(x, y, radius, interval){
 				$('#bug').toggle();
 			},3000);
 			setTimeout(function(){
-				$("#bug").css('background-image', 'url(./public/img/bug1.png)');
-				delay = setInterval(hideAndShow, bug.interval);
+				$("#bug").css('background-image', 'url(./public/img/bug.png)');
+				delay = setInterval(hideAndShow, interval);
 			}, 2*60*1000);
 		}
 	}
