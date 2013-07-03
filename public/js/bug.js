@@ -72,7 +72,7 @@ function Bug(x, y, radius, interval){
 		}
 
 		this.destroy = function(){
-			$('#bug-audio').play();
+			$('#bug-audio')[0].play();
 			curve.stop();
 			$("#bug").css('background-image', 'url(./public/img/blood.png)');
 			clearInterval(delay);

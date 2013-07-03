@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+    background-size: contain;
 }
 body{
     margin: 0;
@@ -11,193 +12,140 @@ body{
     overflow: hidden;
 }
 .main_container {
-    /*
-    min-height: 100%;
-    height: auto !important;
-    height: 100%; */
     background: url(../img/bg_main_woman@2x.jpg) no-repeat;
-    background-size: contain;
-    /*margin: 0 auto -4em;*/
-}
-/*.container{
-    width: 80% !important;
-}*/
-
-/*..............iPad................*/
-@media (min-width: 768px){
-    .main_bg_barock{
-        height: 1004px;
-    }
-    section#objects{
-        height: 598px;
-        width: 590px;
-        padding-top: 92px;
-    }
-    section#objects #object_stage{
-        background: url(../img/stage_s.png) no-repeat;
-        width: 150px;
-        height: 175px;
-        left: 332px;
-    }
-    #bug{
-        background-image: url(../img/bug.png);
-        width:54px;
-        height:54px;
-    }
-    #cup{
-        background: url(../img/tasse.png) no-repeat;
-        width: 343px;
-        height: 280px;
-        bottom: -280px;
-    }
-    #cup-snap{
-        width: 190px;
-        height: 50px;
-        right: 86px;
-        bottom: 226px;
-    }
-    section#objects .bean{
-        width: 48px;
-        height: 43px;
-    }
-    section#objects #bean_1{
-        background: url(../img/bean1.png) no-repeat;
-        left: 250px;
-        top: 220px;
-    }
-    section#objects #bean_2{
-        background: url(../img/bean2.png) no-repeat;
-        left: 464px;
-        top: 150px;
-    }
-    section#objects #bean_3{
-        background: url(../img/bean3.png) no-repeat;
-        left: 472px;
-        top: 484px;
-    }
-    #speech_bubble{
-        background: url(../img/speech_bubble.png) no-repeat;
-        font-size: 2em;
-        line-height: 40px;
-        padding: 95px 60px 0 60px;
-        width: 304px;
-        height: 210px;
-        left: 5px;
-        top: 455px;
-    }
-
-    #coffee_sonata{
-        background: url(../img/kaffehauskontate_bg.png) no-repeat left;
-        width: 758px;
-        height: 218px;
-        bottom: 51px;
-        right: -758px;
-    }
-}
-/*................iPad-Retina................*/
-@media (min-width: 1536px){
-    .main_bg_barock{
-        height: 2008px;
-    }
-    section#objects{
-        height: 1196px;
-        width: 1180px;
-        padding-top: 184px;
-    }
-    section#objects #object_stage{
-        background: url(../img/stage_s@2x.png) no-repeat;
-        width: 300px;
-        height: 350px;
-        left: 664px;
-    }
-    #bug{
-        background-image: url(../img/bug@2x.png);
-        width:108px;
-        height:108px;
-    }
-    #cup{
-        background: url(../img/tasse@2x.png) no-repeat;
-        width: 686px;
-        height: 560px;
-        bottom: -560px;
-    }
-    #cup-snap{
-        width: 380px;
-        height: 100px;
-        right: 172px;
-        bottom: 452px;
-    }
-    section#objects .bean{
-        width: 96px;
-        height: 86px;
-    }
-    section#objects #bean_1{
-        background: url(../img/bean1@2x.png) no-repeat;
-        left: 500px;
-        top: 440px;
-    }
-    section#objects #bean_2{
-        background: url(../img/bean2@2x.png) no-repeat;
-        left: 928px;
-        top: 300px;
-    }
-    section#objects #bean_3{
-        background: url(../img/bean3@2x.png) no-repeat;
-        left: 944px;
-        top: 968px;
-    }
-    #speech_bubble{
-        background: url(../img/speech_bubble@2x.png) no-repeat;
-        font-size: 2em;
-        line-height: 40px;
-        padding: 190px 120px 0 120px;
-        width: 608px;
-        height: 420px;
-        left: 10px;
-        top: 910px;
-    }
-
-    #coffee_sonata{
-        background: url(../img/kaffehauskontate_bg@2x.png) no-repeat left;
-        width: 1516px;
-        height: 436px;
-        bottom: 102px;
-        right: -1516px;
-    }
 }
 
 .main_bg_barock{
     position: relative;
+    height: 1004px;
 }
-/*#content{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 10%;
-    right: 10%;
-}*/
-/*.animated_object{
-	border: 1px solid #000;
-	text-align: center;
-	font-size: 32px;
-	width: 100px;
-	height: 100px;
-}*/
+
 section#objects{
+    height: 690px;
+    width: 590px;
     position: relative;
     z-index: 1;
 }
 section#objects #object_stage{
+    background: url(../img/stage_small@2x.png) no-repeat;
 	position: absolute;
-    cursor: pointer;
-    background-size: contain;
-    transform: rotate(18deg) ;
-    -webkit-transform: rotate(18deg) ;
-    -moz-transform: rotate(18deg) ;
-    -o-transform: rotate(18deg) ;
-    -ms-transform: rotate(18deg) ;
+    width: 129px;
+    height: 136px;
+    left: 470px;
+    top: 260px;
+    transform: rotate(22deg) ;
+    -webkit-transform: rotate(22deg) ;
+    -moz-transform: rotate(22deg) ;
+    -o-transform: rotate(22deg) ;
+    -ms-transform: rotate(22deg) ;
     z-index: 10;
 }
+#cup{
+    background: url(../img/tasse@2x.png) no-repeat;
+    width: 343px;
+    height: 280px;
+    bottom: -280px;
+    position: absolute;
+    right: 0;
+    z-index: 15;
+}
+#cup-snap{
+    width: 190px;
+    height: 50px;
+    right: 86px;        
+    bottom: 226px;
+    position: absolute;
+    background-color: red;
+    z-index: 20;
+}
+section#objects .bean{
+    width: 48px;
+    height: 43px;
+    position: absolute;
+    z-index: 10;
+}
+section#objects #bean_1{
+    background: url(../img/bean1@2x.png) no-repeat;
+    left: 250px;
+    top: 220px;
+}
+section#objects #bean_2{
+    background: url(../img/bean2@2x.png) no-repeat;
+    left: 464px;
+    top: 150px;
+}
+section#objects #bean_3{
+    background: url(../img/bean3@2x.png) no-repeat;
+    left: 472px;
+    top: 484px;
+}
+#versailles{
+    left: 180px;
+    top: 222px;
+    position: absolute;
+    z-index: 15;
+}
+#versailles #versailles_1, #versailles #versailles_2, #versailles #versailles_3{
+    position: absolute;
+}
+#versailles #versailles_1{
+    background: url(../img/versailles_1@2x.png) no-repeat;
+    width: 72px;
+    height: 149px;
+}
+#versailles #versailles_2{
+    background: url(../img/versailles_2@2x.png) no-repeat;
+    width: 100px;
+    height: 129px;
+    left: 71px;
+    top: 20px;
+}
+#versailles #versailles_3{
+    background: url(../img/versailles_3@2x.png) no-repeat;
+    width: 135px;
+    height: 149px;
+    left: 171px;
+}
+#speech_bubble{
+    background: url(../img/speech_bubble@2x.png) no-repeat;
+    font-size: 2em;
+    line-height: 40px;
+    padding: 95px 60px 0 60px;
+    width: 304px;
+    height: 210px;
+    left: 5px;
+    top: 455px;
+    position: absolute;
+    display: none;
+}
+
+#coffee_sonata{
+    background: url(../img/kaffehauskontate_bg@2x.png) no-repeat left;
+    width: 758px;
+    height: 218px;
+    bottom: 51px;
+    right: -758px;
+    position: absolute;
+    z-index: 12;
+}
+
+#bug{
+    background-image: url(../img/bug@2x.png);
+    width:54px;
+    height:54px;
+    position:absolute;
+    background-size: contain;
+    display:none;
+    z-index: 20;
+}
+
+#coffeplay{
+    background-color: red;
+    width: 60px;
+    height: 60px;
+}
+
+
 #object2{
 	background-color: green;
 }
@@ -339,39 +287,3 @@ a.get_pop:hover{
 	overflow: auto;
 }
 
-#cup{
-    position: absolute;
-    right: 0;
-    z-index: 15;
-}
-#cup-snap{
-    position: absolute;
-    background-color: red;
-    z-index: 20;
-}
-section#objects .bean{
-    position: absolute;
-    z-index: 10;
-}
-#speech_bubble{
-    position: absolute;
-    display: none;
-}
-
-#coffee_sonata{
-    position: absolute;
-    z-index: 12;
-}
-
-#bug{
-    position:absolute;
-    background-size: contain;
-    display:none;
-    z-index: 5;
-}
-
-#coffeplay{
-    background-color: red;
-    width: 60px;
-    height: 60px;
-}
