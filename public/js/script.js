@@ -4,6 +4,20 @@ document.ontouchmove = function(e) { e.preventDefault(); }
 $(document).ready(function(){
 
 	
+	
+	var wiggleInterval = setInterval(function(){
+		var wiggleArray = $('.wiggle');
+		var wiggleCount = wiggleArray.size();
+		var random = Math.floor(Math.random()*wiggleCount);
+		var wiggleObject = $(wiggleArray.get(random));
+		wiggleObject.ClassyWiggle('start', {limit: 5});
+	},3000	);
+
+	$('.wiggle').hammer().on('tap', function(ev){
+		ev.preventDefault();
+		$(this).removeClass('wiggle');
+	})
+
 	var screenWidth = $("#content").width(); //$(window).width();
 	var screenHeight = $("#content").height(); //$(window).height();
 	var coffeePlayer = $("#coffee-audio")[0];
@@ -28,8 +42,8 @@ $(document).ready(function(){
 			"bottom":"0px"
 			}, 1500);
 			setTimeout(function(){
-				$('#speech_bubble').fadeToggle(2000);
-			},1500);
+				$('#speech_bubble').fadeIn(2000);
+			},500);
 			
 			showSpeechBubble = true;
 			beanTapped = true;
@@ -77,11 +91,15 @@ $(document).ready(function(){
 			});
 		}
 	});
-//	if (showSpeechBubble) {
-		$('.bean').hammer().on('dragstart', function(ev){
+
+	$('.bean').hammer().on('dragstart', function(ev){
+		$(this).css('z-index','100');
+		if (showSpeechBubble) {
 			$('#speech_bubble').fadeOut(2000);
-		});
-//	}
+			showSpeechBubble = false;
+		}
+	});
+
 	var kantata_handler = function(event){
 		if (!coffeePlayer.paused) {
 			$('#coffeplay').css('background-color', 'red');

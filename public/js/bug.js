@@ -10,7 +10,7 @@ function Bug(x, y, radius, interval){
 		function hideAndShow(){
 
 			if ($('#bug').css('display') != 'none') {
-				$('#bug').toggle('slow');
+				$('#bug').fadeToggle('fast');
 			}
 			var parent = $("#bug").parent();
 			var height = parent.height();
@@ -23,8 +23,9 @@ function Bug(x, y, radius, interval){
 			// is it display: reverse sequence
 			if ($("#bug").css('display') == 'none') {
 				$("#bug").css({'left':x, 'top':y});
-				$("#bug").toggle('slow');
-				setTimeout(moveOnCurve, 1500);
+				$("#bug").fadeToggle('fast');
+				moveOnCurve();
+				//setTimeout(moveOnCurve, 1);
 			} else{
 				//set delay to prevent "slowness" of function toggle
 				setTimeout(function(){
@@ -46,7 +47,7 @@ function Bug(x, y, radius, interval){
 		//	var o = document.getElementById('bug');
 			o.style.position = 'absolute';
 
-			curve.animate(3, function(point,angle){
+			curve.animate(5, function(point,angle){
 				o.style.left = point.x+"px";
 				o.style.top  = point.y+"px";
 				o.style.transform =
@@ -72,7 +73,7 @@ function Bug(x, y, radius, interval){
 		}
 
 		this.destroy = function(){
-			$('#bug-audio').play();
+			$('#bug-audio')[0].play();
 			curve.stop();
 			$("#bug").css('background-image', 'url(./public/img/blood.png)');
 			clearInterval(delay);
