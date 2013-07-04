@@ -253,7 +253,7 @@ overlay:target+popup {
     background-image: url(../img/stage_top@2x.png);
     width: 716px;
     height: 227px;
-    z-index: 35;
+    z-index: 38;
 }
 #stage_curtain_left, #stage_curtain_right{
     height: 530px;
@@ -264,15 +264,17 @@ overlay:target+popup {
     background-image: url(../img/stage_curtain_left@2x.png);
     width: 326px;
     left: 44px;
-    z-index: 36;
+    z-index: -3;
 }
 #stage_curtain_right{
     background-image: url(../img/stage_curtain_right@2x.png);
     width: 309px;
     left: 357px;
-    z-index: 37;
+    z-index: -2;
 }
 #rope{
+    width: 20px;
+    height: 700px;
     top: 100px;
     right: 22px;
     position: absolute;
