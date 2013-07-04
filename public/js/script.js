@@ -4,7 +4,28 @@ document.ontouchmove = function(e) { e.preventDefault(); }
 $(document).ready(function(){
 
 	
+
+	var screenWidth = $("#content").width(); //$(window).width();
+	var screenHeight = $("#content").height(); //$(window).height();
+	var coffeePlayer = $("#coffee-audio")[0];
+
 	
+	$('#rope_inner').draggable({ axis: "y", containment: "parent"});
+	
+	$('#rope_inner').on('drag', function(ev, obj){
+		console.log("originalPosition top: " + obj.originalPosition.top);
+		console.log("position top:" + obj.position.top);
+
+		var ropeDeltaY = obj.position.top - obj.originalPosition.top;
+		console.log("delta: " + ropeDeltaY);
+		var curtainRightPositonLeft = $('#stage_curtain_right').position().left;
+		var curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
+		$('#stage_curtain_right').css({left: curtainRightPositonLeft + ropeDeltaY});
+		$('#stage_curtain_left').css({left: curtainLeftPositionLeft - ropeDeltaY});
+
+	});
+
+	//wiggle
 	var wiggleInterval = setInterval(function(){
 		var wiggleArray = $('.wiggle');
 		var wiggleCount = wiggleArray.size();
@@ -14,13 +35,8 @@ $(document).ready(function(){
 	},3000	);
 
 	$('.wiggle').hammer().on('tap', function(ev){
-		ev.preventDefault();
 		$(this).removeClass('wiggle');
 	})
-
-	var screenWidth = $("#content").width(); //$(window).width();
-	var screenHeight = $("#content").height(); //$(window).height();
-	var coffeePlayer = $("#coffee-audio")[0];
 
 	//	behavior of #bug
 	var bug = new Bug(100, 100, Math.floor(screenWidth*0.25), 4000)

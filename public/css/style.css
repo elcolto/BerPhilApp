@@ -360,6 +360,8 @@ overlay:target+popup {
     right: 22px;
     position: absolute;
     z-index: -1;
+    background-color: green;
+    opacity:0.5;
 }
 #rope_inner{
     width: 20px;
