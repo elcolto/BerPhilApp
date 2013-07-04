@@ -9,19 +9,46 @@ $(document).ready(function(){
 	var screenHeight = $("#content").height(); //$(window).height();
 	var coffeePlayer = $("#coffee-audio")[0];
 
+	/*
+	$("#rope_inner").slider({
+	            value:100,
+	            min: 0,
+	            max: 500,
+	            step: 50
+	            
+	}
+	);*/
+
+	var oldDelta=0;
+	$('#rope_inner').draggable({ 
+		stop: function(ev, ui){
+			oldDelta = 0;
+		},
+		axis: "y", containment: "parent"
+	});
 	
-	$('#rope_inner').draggable({ axis: "y", containment: "parent"});
+	
 	
 	$('#rope_inner').on('drag', function(ev, obj){
-		console.log("originalPosition top: " + obj.originalPosition.top);
-		console.log("position top:" + obj.position.top);
-
+		//console.log("originalPosition top: " + obj.originalPosition.top);
+		//console.log("position top:" + obj.position.top);
+		
 		var ropeDeltaY = obj.position.top - obj.originalPosition.top;
+
+		console.log("--------------------");
+		console.log("oldDelta: " + oldDelta);
 		console.log("delta: " + ropeDeltaY);
+		console.log("original position: " + obj.originalPosition.top);
+		console.log("position: " + obj.position.top);
+
 		var curtainRightPositonLeft = $('#stage_curtain_right').position().left;
 		var curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
-		$('#stage_curtain_right').css({left: curtainRightPositonLeft + ropeDeltaY});
-		$('#stage_curtain_left').css({left: curtainLeftPositionLeft - ropeDeltaY});
+		if (oldDelta != ropeDeltaY) {
+			$('#stage_curtain_right').css({left: curtainRightPositonLeft + Math.round(0.1*ropeDeltaY)});
+			$('#stage_curtain_left').css({left: curtainLeftPositionLeft - Math.round(0.1*ropeDeltaY)});
+			oldDelta = ropeDeltaY;
+		}
+
 
 	});
 
@@ -34,7 +61,7 @@ $(document).ready(function(){
 		wiggleObject.ClassyWiggle('start', {limit: 5});
 	},3000	);
 
-	$('.wiggle').hammer().on('tap', function(ev){
+	$('.wiggle').hammer().on('tap dragstart', function(ev){
 		$(this).removeClass('wiggle');
 	})
 
@@ -58,7 +85,7 @@ $(document).ready(function(){
 			"bottom":"0px"
 			}, 1500);
 			setTimeout(function(){
-				$('#speech_bubble').fadeIn(2000);
+				$('#speech_bubble_find').fadeIn(2000);
 			},500);
 			
 			showSpeechBubble = true;
@@ -88,10 +115,9 @@ $(document).ready(function(){
 			       	}
 			       
 		        	if(beanCounter==beanArray.length){
-		        		$('#speech_bubble p').text("sehr gut, du hast alle bohnen gefunden.");
-		        		$('#speech_bubble').fadeIn(2000);
+		           		$('#speech_bubble_mhhh').fadeIn(2000);
 		        		setTimeout(function(){
-							$('#speech_bubble').fadeOut(2000);;
+							$('#speech_bubble_mhhh').fadeOut(2000);;
 						}, 3500);
 						setTimeout(function(){
 							$('#coffee_sonata').animate({
@@ -111,7 +137,7 @@ $(document).ready(function(){
 	$('.bean').hammer().on('dragstart', function(ev){
 		$(this).css('z-index','100');
 		if (showSpeechBubble) {
-			$('#speech_bubble').fadeOut(2000);
+			$('#speech_bubble_find').fadeOut(2000);
 			showSpeechBubble = false;
 		}
 	});
