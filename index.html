@@ -9,7 +9,7 @@
 	/>
 	<title>BerPhilApp</title>
 	<link rel="stylesheet" href="public/css/style.css" type="text/css" media="screen, projection">
-	<link rel="stylesheet" href="public/bootstrap/css/bootstrap.css" type="text/css" media="screen, projection">
+	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div id="page" class="main_container">
@@ -30,7 +30,7 @@
 					<div id="versailles_2"></div>
 					<div id="versailles_3"></div>
 				</div>
-				<a href="#stage_content_a" id="object_stage"></a>
+				<a href="#stage_content" id="object_stage"></a>
 				
 				<!--<a href="#object2_content" id="object2" class="get_pop object_draggable">2</a>
 				<a href="#object3_content" id="object3" class="get_pop object_draggable">3</a>
@@ -56,10 +56,14 @@
 			<div id="cup">
 				<div id="cup-snap"></div>
 			</div>
-			<div id="speech_bubble">
-				<p>Finde alle drei Bohnen im Bild und ziehe sie in die Tasse!</p>
+			<div id="speech_bubble_find">
+				<p>Finde alle Kaffeebohnen und ziehe sie in die Tasse!</p>
+			</div>
+			<div id="speech_bubble_mhhh">
+				<p>Mhhh...</p>
 			</div>
 			<div id="coffee_sonata">
+				<p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen.</p>
 				<div id="coffeplay" class="playaudio">
 					<audio id="coffee-audio"><source src="public/audio/kaffeekantate.mp3"/>
 					</audio>
@@ -67,28 +71,17 @@
 			</div>
 
 			<!-- popup object #1 -->
-			<a href="#x" id="stage_content_a" class="overlay"></a>
-			<div  id="stage_content" class="popup">
-				<div id="stage_top"></div>
-				<div id="rope">
-					<div id="rope_inner"></div>
+			<div  id="stage_content" class="modalWindow">
+				<a href="#close" title="Close" class="close">X</a>
+				<div>
+					<div id="stage_top"></div>
+					<div id="rope">
+						<div id="rope_inner"></div>
+					</div>
+					<div id="stage_curtain_left"></div>
+					<div id="stage_curtain_right"></div>
 				</div>
-				<div id="stage_curtain_left"></div>
-				<div id="stage_curtain_right"></div>
-
-				<a class="close_icon" href="#close">X</a>
 			</div>
-			<!-- popup object #2 -->
-			<!--
-			<a href="#x" class="overlay" id="object2_content"></a>
-			<div class="popup">
-				<div class="scrollable_text">
-					<h2>Ich bin eine Headline Nr.2!</h2>
-					<p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens Vögel Rüben, Joghurt und Quark. "Fix, Schwyz!" quäkt Jürgen blöd vom Paß. Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich. Falsches Üben von Xylophonmusik quält jeden größeren Zwerg. Heizölrückstoßabdämpfung. Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens Vögel Rüben, Joghurt und Quark. "Fix, Schwyz!" quäkt Jürgen blöd vom Paß. Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich. Falsches Üben von Xylophonmusik quält jeden größeren Zwerg. Heizölrückstoßabdämpfung.Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux</p>
-				</div>
-				<a class="close_icon" href="#close">X</a>
-			</div> -->
-			<!-- popup object #2 ENDE -->
 		</div>
 	</div>
 		<script src="public/js/jquery-2.0.0.min.js"></script>

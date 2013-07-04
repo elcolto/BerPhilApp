@@ -6,8 +6,20 @@
 body{
     margin: 0;
     padding: 0;
-    height: 100%
+    height: 100%;
+    font-family: 'Libre Baskerville', serif;
 }
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: normal;
+}
+/*
+@font-face {
+    font-family: OpenBaskerville;
+    src:local('OpenBaskerville'), local('OpenBaskerville'), url(public/font/OpenBaskerville-0.0.53.otf) format('otf');
+}*/
 #page{
     overflow: hidden;
 }
@@ -107,17 +119,33 @@ section#objects #bean_3{
     height: 149px;
     left: 171px;
 }
-#speech_bubble{
-    background: url(../img/speech_bubble@2x.png) no-repeat;
-    font-size: 2em;
-    line-height: 40px;
-    padding: 95px 60px 0 60px;
-    width: 304px;
-    height: 210px;
-    left: 5px;
-    top: 455px;
+#speech_bubble_find{
+    background: url(../img/speech_bubble__find_beans@2x.png) no-repeat;
+    width: 226px;
+    height: 321px;
+    left: 38px;
+    bottom: 200px;
     position: absolute;
     display: none;
+}
+#speech_bubble_mhhh{
+    background: url(../img/speech_bubble__mhh@2x.png) no-repeat;
+    width: 162px;
+    height: 112px;
+    left: 21px;
+    bottom: 105px;
+    position: absolute;
+    display: none;
+}
+#speech_bubble_find p, #speech_bubble_mhhh p{
+    font-size: 1.4em;
+    line-height: 1.5em;
+}
+#speech_bubble_find p{
+    padding: 80px 30px 0px 26px;
+}
+#speech_bubble_mhhh p{
+    padding: 44px 0px 0px 36px;
 }
 
 #coffee_sonata{
@@ -128,6 +156,15 @@ section#objects #bean_3{
     right: -758px;
     position: absolute;
     z-index: 12;
+}
+#coffee_sonata p{
+    font-size: 1.4em;
+    padding: 44px 0px 0px 36px;
+}
+#coffeplay{
+    background-color: red;
+    width: 60px;
+    height: 60px;
 }
 
 #bug{
@@ -140,13 +177,8 @@ section#objects #bean_3{
     z-index: 20;
 }
 
-#coffeplay{
-    background-color: red;
-    width: 60px;
-    height: 60px;
-}
-
 /*-----------------Pop-Up-----------------*/
+/*
 .overlay {
     background-color: rgba(0, 0, 0, 0.6);
     bottom: 0;
@@ -169,6 +201,7 @@ section#objects #bean_3{
     visibility: visible;
     opacity: 1;
 }
+*/
 /*
 .popup {
     background-color: #fff;
@@ -216,6 +249,7 @@ overlay:target+popup {
     visibility: visible;
 }
 */
+/*
 .close_icon {
     background-color: rgba(0, 0, 0, 0.8);
     height: 30px;
@@ -242,7 +276,54 @@ overlay:target+popup {
 .close:hover {
     background-color: rgba(64, 128, 128, 0.8);
 }
+*/
 /*-----------------Pop-Up-ENDE-----------------*/
+
+/*-----------------Modal-Window-----------------*/
+.modalWindow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalWindow:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalWindow > div {
+    position: relative;
+    margin: 10% auto;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+/*-----------------Modal-Window ENDE-----------------*/
 
 /*---------------Stage-Content----------------*/
 #stage_content{
