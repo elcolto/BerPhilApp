@@ -8,6 +8,8 @@ body{
     padding: 0;
     height: 100%;
     font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    line-height: 1.4em;
 }
 
 @font-face {
@@ -30,6 +32,9 @@ body{
 .main_bg_barock{
     position: relative;
     height: 1004px;
+    background: url(../img/objects_inactive_2@2x.png) no-repeat;
+    background-size: 500px;
+    background-position: 130px 254px;
 }
 
 section#objects{
@@ -68,7 +73,6 @@ section#objects #object_stage{
     right: 86px;        
     bottom: 226px;
     position: absolute;
-    background-color: red;
     z-index: 20;
 }
 section#objects .bean{
@@ -92,9 +96,30 @@ section#objects #bean_3{
     left: 472px;
     top: 484px;
 }
+
+#chair{
+    background: url(../img/chair@2x.png) no-repeat;
+    width: 72px;
+    height: 126px;
+    top: 452px;
+    left: 428px;
+    position: absolute;
+    z-index: 16;
+}
+#louis{
+    background: url(../img/louis@2x.png) no-repeat;
+    width: 164px;
+    height: 149px;
+    top: 254px;
+    left: 74px;
+    position: absolute;
+    z-index: 16;
+}
 #versailles{
     left: 180px;
     top: 222px;
+    width: 308px;
+    height: 149px;
     position: absolute;
     z-index: 15;
 }
@@ -158,13 +183,16 @@ section#objects #bean_3{
     z-index: 12;
 }
 #coffee_sonata p{
-    font-size: 1.4em;
-    padding: 44px 0px 0px 36px;
+    padding: 18px 320px 0px 60px;
 }
 #coffeplay{
     background-color: red;
-    width: 60px;
-    height: 60px;
+    background: url(../img/button_playMusic@2x.png) no-repeat;
+    width: 38px;
+    height: 36px;
+    left: 60px;
+    bottom: 16px;
+    position: absolute;
 }
 
 #bug{
@@ -300,7 +328,6 @@ overlay:target+popup {
 }
 .modalWindow > div {
     position: relative;
-    margin: 10% auto;
 }
 
 .close {
@@ -308,9 +335,9 @@ overlay:target+popup {
     color: #FFFFFF;
     line-height: 25px;
     position: absolute;
-    right: -12px;
+    right: 10px;
     text-align: center;
-    top: -10px;
+    top: 10px;
     width: 24px;
     text-decoration: none;
     font-weight: bold;
@@ -330,10 +357,15 @@ overlay:target+popup {
     position: fixed;
     z-index: 30;
 }
+#stage_content.modalWindow > div{
+    margin-top: 104px;
+    margin-left: 25px;
+}
 #stage_top{
     background-image: url(../img/stage_top@2x.png);
     width: 716px;
     height: 227px;
+    position: absolute;
     z-index: 38;
 }
 #stage_curtain_left, #stage_curtain_right{
@@ -354,19 +386,18 @@ overlay:target+popup {
     z-index: -2;
 }
 #rope{
-    width: 20px;
-    height: 700px;
-    top: 100px;
+    width: 40px;
+    height: 658px;
+    top: 20px;
     right: 22px;
     position: absolute;
     z-index: -1;
     background-color: green;
-    opacity:0.5;
 }
 #rope_inner{
-    width: 20px;
-    height: 542px;
-    background-color: red;
+    background-image: url(../img/rope@2x.png);
+    width: 36px;
+    height: 458px;
 }
 #stage_content.popup {
     display: inline-block;
