@@ -3,54 +3,45 @@ document.ontouchmove = function(e) { e.preventDefault(); }
 
 $(document).ready(function(){
 
-	
-
 	var screenWidth = $("#content").width(); //$(window).width();
 	var screenHeight = $("#content").height(); //$(window).height();
 	var coffeePlayer = $("#coffee-audio")[0];
 
-	/*
-	$("#rope_inner").slider({
-	            value:100,
-	            min: 0,
-	            max: 500,
-	            step: 50
-	            
-	}
-	);*/
 
-	var oldDelta=0;
+	var curtainRightPositonLeft = $('#stage_curtain_right').position().left;
+	var curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
 	$('#rope_inner').draggable({ 
-		stop: function(ev, ui){
-			oldDelta = 0;
+		axis: "y", 
+		containment: "parent",
+
+		create: function(ev, ui){
+			console.log("create!")
+			console.log("right: "+ $('#stage_curtain_right').position().left);
+			console.log("left: " + $('#stage_curtain_left').position().left);
 		},
-		axis: "y", containment: "parent"
-	});
-	
-	
-	
-	$('#rope_inner').on('drag', function(ev, obj){
-		//console.log("originalPosition top: " + obj.originalPosition.top);
-		//console.log("position top:" + obj.position.top);
-		
-		var ropeDeltaY = obj.position.top - obj.originalPosition.top;
 
-		console.log("--------------------");
-		console.log("oldDelta: " + oldDelta);
-		console.log("delta: " + ropeDeltaY);
-		console.log("original position: " + obj.originalPosition.top);
-		console.log("position: " + obj.position.top);
+		start: function(ev, ui){
+		console.log("Start!")
+		console.log("right: "+ $('#stage_curtain_right').position().left);
+		console.log("left: " + $('#stage_curtain_left').position().left);
+		},
 
-		var curtainRightPositonLeft = $('#stage_curtain_right').position().left;
-		var curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
-		if (oldDelta != ropeDeltaY) {
-			$('#stage_curtain_right').css({left: curtainRightPositonLeft + Math.round(0.1*ropeDeltaY)});
-			$('#stage_curtain_left').css({left: curtainLeftPositionLeft - Math.round(0.1*ropeDeltaY)});
-			oldDelta = ropeDeltaY;
+		drag: function(ev, ui){
+			var ropeDeltaY = ui.position.top - ui.originalPosition.top;
+			$('#stage_curtain_right').css({left: curtainRightPositonLeft + (1.5*ropeDeltaY)});
+			$('#stage_curtain_left').css({left: curtainLeftPositionLeft - (1.5*ropeDeltaY)});
+		},
+
+		stop: function(ev, ui){
+			console.log("Stop!")
+			console.log("right: "+ $('#stage_curtain_right').position().left);
+			console.log("left: " + $('#stage_curtain_left').position().left)
+			console.log("------------------");
+			curtainRightPositonLeft = $('#stage_curtain_right').position().left;
+			curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
 		}
-
-
 	});
+	
 
 	//wiggle
 	var wiggleInterval = setInterval(function(){
@@ -91,8 +82,15 @@ $(document).ready(function(){
 			showSpeechBubble = true;
 			beanTapped = true;
 		
-			$('.bean').draggable({snap: '#cup-snap', snapMode: 'outer',});
+			//$('.bean').draggable({snap: '#cup-snap', snapMode: 'outer',});
 			$(".bean").draggable({
+				start: function(event, ui){
+					$(this).css('z-index','100');
+					if (showSpeechBubble) {
+						$('#speech_bubble_find').fadeOut(2000);
+						showSpeechBubble = false;
+					}
+				},
 			    drag: function(event, ui) {
 			        var draggable = $(this).data("ui-draggable");
 			        $.each(draggable.snapElements, function(index, element) {
@@ -104,11 +102,10 @@ $(document).ready(function(){
 			        });
 			    },
 			    snap: "#cup-snap",
+			    snapMode: 'outer',
 			    snapped: function(event, ui) {
 			        // Do something with 'ui.snapElement'...
 			        $(this).draggable('disable');
-			       	// $(this).removeClass('ui-draggable');
-			       	
 			       	if ($(this).css('display')!='none'){
 			       		$(this).toggle();
 			       		 beanCounter++;
@@ -134,14 +131,6 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.bean').hammer().on('dragstart', function(ev){
-		$(this).css('z-index','100');
-		if (showSpeechBubble) {
-			$('#speech_bubble_find').fadeOut(2000);
-			showSpeechBubble = false;
-		}
-	});
-
 	var kantata_handler = function(event){
 		if (!coffeePlayer.paused) {
 			$('#coffeplay').css('background-color', 'red');
@@ -150,17 +139,18 @@ $(document).ready(function(){
 		$('#coffee_sonata').animate({
 			"left":screenWidth+1+"px"
 		}, 2000);
-		$('#cup').animate({"bottom":"-280px"}, 2000 );
+		var cupHeight = $('#cup').height();
+		$('#cup').animate({"bottom":-cupHeight + "px"}, 2000 );
 	};
 
 	$('#coffeplay').hammer().on('tap', function(){
 		if (coffeePlayer.paused) {
-			$('#coffeplay').css('background-color', 'yellow');
+			$('#coffeplay').css('background', 'url(./public/img/button_stopMusic@2x.png)');
 			coffeePlayer.play();
 		}
 
 		else{
-			$('#coffeplay').css('background-color', 'red');
+			$('#coffeplay').css('background', 'url(./public/img/button_playMusic@2x.png)');
 			coffeePlayer.pause();
 		}
 	});
