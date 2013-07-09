@@ -365,6 +365,56 @@ overlay:target+popup {
     position: absolute;
     z-index: 38;
 }
+#stage_bg{
+    background: url(../img/stage_bg@2x.png) no-repeat;
+    width: 406px;
+    height: 503px;
+    top: 226px;
+    left: 50%;
+    margin-left: -212px;
+    position: absolute;
+    z-index: -20;
+}
+.stage_button{
+    width:37px;
+    height: 37px;
+    top: 357px;
+    margin-right: 25px;
+    position: absolute;
+    z-index: -19;
+}
+#stage_button_1{
+    background: url(../img/stage_button_1@2x.png) no-repeat;
+    left: 132px;
+}
+#stage_button_2{
+    background: url(../img/stage_button_2@2x.png) no-repeat;
+    left: 194px;
+}
+#stage_button_3{
+    background: url(../img/stage_button_3@2x.png) no-repeat;
+    left: 256px;
+}
+#angel{
+    width: 140px;
+    left: 200px;
+    top: 67px;
+    position: absolute;
+    z-index: -15px;
+}
+#angel_body{
+    width: 80px;
+    height: 160px;
+    float: left;
+    background-color: yellow;
+}
+#angel_wing{
+    width: 50px;
+    height: 80px;
+    float: right;
+    background-image: -webkit-linear-gradient(top, #68ff4a, #ffadc6);
+    background-image: linear-gradient(top, #68ff4a, #ffadc6);
+}
 #stage_curtain_left, #stage_curtain_right{
     height: 530px;
     top: 224px;
@@ -384,7 +434,7 @@ overlay:target+popup {
 }
 #rope{
     width: 40px;
-    height: 658px;
+    height: 594px;
     top: 20px;
     right: 22px;
     position: absolute;
