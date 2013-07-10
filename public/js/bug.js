@@ -34,6 +34,10 @@ function Bug(x, y, radius, interval){
 			}
 		}
 
+		/*
+		let the bug moving on curve on a radius,
+		using CurveAnimator (http://phrogz.net/SVG/animation_on_a_curve.html)
+		*/
 		function moveOnCurve(){
 			var o = document.getElementById('bug');
 
@@ -57,6 +61,7 @@ function Bug(x, y, radius, interval){
 			});
 		}
 
+		/*calculate endpoint on radius*/
 		function getToPoint(x, y, radius){
 			var minX = x - radius;
 
