@@ -36,10 +36,10 @@ body{
 
 #objects_inactive{
     background: url(../img/objects_inactive_2@2x.png) no-repeat;
-    width: 502px;
-    height: 738px;
+    width: 426px;
+    height: 689px;
     left: 34px;
-    top: 266px;
+    top: 315px;
     position: absolute;
     z-index: 16;
 }
@@ -54,16 +54,11 @@ section#objects{
 section#objects #object_stage{
     background: url(../img/stage_small@2x.png) no-repeat;
 	position: absolute;
-    width: 129px;
-    height: 136px;
+    width: 164px;
+    height: 158px;
     left: 470px;
     top: 260px;
-    transform: rotate(22deg) ;
-    -webkit-transform: rotate(22deg) ;
-    -moz-transform: rotate(22deg) ;
-    -o-transform: rotate(22deg) ;
-    -ms-transform: rotate(22deg) ;
-    z-index: 10;
+    z-index: 17;
 }
 #cup{
     background: url(../img/tasse@2x.png) no-repeat;
@@ -95,13 +90,14 @@ section#objects #bean_1{
 }
 section#objects #bean_2{
     background: url(../img/bean2@2x.png) no-repeat;
-    left: 464px;
-    top: 150px;
+    left: 450px;
+    top: 128px;
 }
 section#objects #bean_3{
     background: url(../img/bean3@2x.png) no-repeat;
     left: 472px;
     top: 484px;
+    z-index: 19;
 }
 
 #chair{
@@ -111,7 +107,7 @@ section#objects #bean_3{
     top: 452px;
     left: 428px;
     position: absolute;
-    z-index: 17;
+    z-index: 20;
 }
 #louis{
     background: url(../img/louis@2x.png) no-repeat;
@@ -121,6 +117,15 @@ section#objects #bean_3{
     left: 74px;
     position: absolute;
     z-index: 17;
+}
+#party{
+    background: url(../img/party@2x.png) no-repeat;
+    width: 156px;
+    height: 101px;
+    right: -30px;
+    top: 184px;
+    position: absolute;
+    z-index: 16;
 }
 #versailles{
     left: 180px;
@@ -149,6 +154,25 @@ section#objects #bean_3{
     height: 149px;
     left: 171px;
 }
+#color_blur{
+    background: url(../img/color_blur@2x.png) no-repeat;
+    width: 104px;
+    height: 299px;
+    top: 260px;
+    right: 36px;
+    position: absolute;
+    z-index: 18;
+}
+#dishes{
+    background: url(../img/dishes@2x.png) no-repeat;
+    width: 84px;
+    height: 220px;
+    top: 154px;
+    right: 88px;
+    position: absolute;
+    z-index: 22;
+}
+
 #speech_bubble_find{
     background: url(../img/speech_bubble__find_beans@2x.png) no-repeat;
     width: 226px;
@@ -156,6 +180,7 @@ section#objects #bean_3{
     left: 38px;
     bottom: 200px;
     position: absolute;
+    z-index: 12;
     display: none;
 }
 #speech_bubble_mhhh{
