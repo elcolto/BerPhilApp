@@ -14,7 +14,9 @@
 <body>
 	<div id="page" class="main_container">
 		<div id="content" class="main_bg_barock">
+
 			<section id="objects">
+				<div id="objects_inactive"></div>
 				<div id="bug">
 					<audio id="bug-audio"><source src="public/audio/bug.mp3"/>
 					</audio>
@@ -67,7 +69,7 @@
 			</div>
 			<div id="coffee_sonata">
 				<p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen.</p>
-				<div id="coffeplay" class="playaudio">
+				<div id="coffeplay" class="playaudio button">
 					<audio id="coffee-audio"><source src="public/audio/kaffeekantate.mp3"/>
 					</audio>
 				</div>
@@ -75,17 +77,21 @@
 
 			<!-- popup object #1 -->
 			<div  id="stage_content" class="modalWindow">
-				<a href="#close" title="Close" class="close">X</a>
+				<a href="#close" title="Close" class="close button"></a>
 				<div>
 					<div id="stage_top"></div>
-					<div id="stage_bg">
+					<div id="stage_middle">
+						<div id="angel">
+							<div id="angel_body"></div>
+							<div id="angel_wing"></div>
+						</div>
 						<div id="stage_button_1" class="stage_button"></div>
 						<div id="stage_button_2" class="stage_button"></div>
 						<div id="stage_button_3" class="stage_button"></div>
-					</div>
-					<div id="angel">
-						<div id="angel_body"></div>
-						<div id="angel_wing"></div>
+						<div id="stage_popup">
+							<div class="close button"></div>
+							<p></p>
+						</div>
 					</div>
 					<div id="rope">
 						<div id="rope_inner"></div>
