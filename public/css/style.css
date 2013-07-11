@@ -502,15 +502,14 @@ overlay:target+popup {
     background: url(../img/elephant@2x.png) no-repeat;
     width: 1117px;
     height: 223px;
-    float: right;
-    position: absolute;
+    left: 406px;
     top:120px;
+    position: absolute;
 }
 #elephant_popup{
     width: 406px;
     height: 503px;
     background-color: #fff;
-    float: left;
     position: absolute;
 }
 
