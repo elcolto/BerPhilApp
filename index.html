@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content=	"user-scalable=no,
 									width=device-width,
@@ -14,6 +15,7 @@
 <body>
 	<div id="page" class="main_container">
 		<div id="content" class="main_bg_barock">
+			<div id="reload" class="button"></div>
 
 			<section id="objects">
 				<div id="objects_inactive"></div>
@@ -71,7 +73,7 @@
 				<p>Mhhh...</p>
 			</div>
 			<div id="coffee_sonata">
-				<p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen.</p>
+				<p>"Schweigt stille, plaudert nicht", auch bekannt als "Kaffeekantate", ist eine weltliche Kantate von J. S. Bach. Dem Werk liegt eine Dichtung von Picander zugrunde (Veröffentlichung 1732). Vermutlich entstand die Kantate 1734, um im Zimmermannschen Kaffeehaus in Leipzig aufgeführt zu werden.</p>
 				<div id="coffeplay" class="playaudio button">
 					<audio id="coffee-audio"><source src="public/audio/kaffeekantate.mp3"/>
 					</audio>
@@ -81,12 +83,16 @@
 			<!-- popup object #1 -->
 			<div  id="stage_content" class="modalWindow">
 				<a href="#close" title="Close" class="close button"></a>
-				<div>
+				<div id="stage_top_bg"></div>
+				<div id="stage_curtain_left_bg"></div>
+				<div id="stage_curtain_right_bg"></div>
+				<div id="modalWindow_inner">
 					<div id="stage_top"></div>
 					<div id="stage_middle">
 						<div id="angel">
-							<div id="angel_body"></div>
+							<div id="angel_wing_left"></div>
 							<div id="angel_wing"></div>
+							<div id="angel_body"></div>
 						</div>
 						<div id="stage_button_1" class="stage_button"></div>
 						<div id="stage_button_2" class="stage_button"></div>

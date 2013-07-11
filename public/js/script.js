@@ -170,20 +170,21 @@ $(document).ready(function(){
 
 	//animation of an angel by pressing the first burtton
 	var angelAnimated = false;
-	var wing = $('#angel_wing');
-	//set initial css forfor wing
-	var wingCss = {
-		top: wing.position().top+'px',
-		left: wing.position().left + 'px',
-		'-webkit-transform': 'rotate(0deg)',
-		'transform': 'rotate(0deg)',
-		'display': 'block'
-	};
+	
 
 	$('#stage_button_1').hammer().on('tap',function(ev){
 		ev.preventDefault();
 		var stageHeight = $('#stage_middle').height();
 		var stageWidth = $('#stage_middle').width();
+		var wing = $('#angel_wing');
+		//set initial css forfor wing
+		var wingCss = {
+			top: wing.position().top+'px',
+			left: wing.position().left + 'px',
+			'-webkit-transform': 'rotate(0deg)',
+			'transform': 'rotate(0deg)',
+			'display': 'block'
+		};
 		if (!angelAnimated) {
 			//start animation of angel, and let fall the wing
 			$('#angel').toggle();
