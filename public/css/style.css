@@ -504,6 +504,7 @@ overlay:target+popup {
     height: 223px;
     float: right;
     position: absolute;
+    top:120px;
 }
 #elephant_popup{
     width: 406px;

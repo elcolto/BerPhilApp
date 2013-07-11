@@ -239,8 +239,8 @@ $(document).ready(function(){
 
 	$('#stage_button_2').hammer().on('tap', function(){
 		var elephantWidt = $('#elephant').width();
-		$('#elephant').toggle().delay(200).animate({left: "+=" + elephantWidt}, 4500);
-		$('#stage_popup p').html($('#stage_popup p').attr("data-text-elephant"));
+		$('#elephant').animate({left: "+=" + elephantWidt}, 6000);
+	//	$('#stage_popup p').html($('#stage_popup p').attr("data-text-elephant"));
 	//	$('#stage_popup').fadeIn(1000);
 	});
 
