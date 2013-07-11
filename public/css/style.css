@@ -44,6 +44,12 @@ body{
     z-index: 16;
 }
 
+#reload{
+    background: url(../img/button_reload@2x.png) no-repeat;
+    left: 10px;
+    top: 10px;
+}
+
 section#objects{
     height: 900px;
     width: 590px;
@@ -213,11 +219,11 @@ section#objects #bean_3{
     z-index: 12;
 }
 #coffee_sonata p{
-    padding: 18px 320px 0px 60px;
+    padding: 16px 302px 0px 58px;
 }
 #coffeplay{
     background: url(../img/button_playMusic@2x.png) no-repeat;
-    left: 60px;
+    left: 366px;
     bottom: 16px;
 }
 
@@ -357,7 +363,7 @@ overlay:target+popup {
     opacity:1;
     pointer-events: auto;
 }
-.modalWindow > div {
+.modalWindow > div#modalWindow_inner {
     position: relative;
 }
 
@@ -366,6 +372,7 @@ overlay:target+popup {
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 50;
     /*
     background: #606061;
     color: #FFFFFF;
@@ -388,10 +395,11 @@ overlay:target+popup {
 
 /*---------------Stage-Content----------------*/
 #stage_content{
+    background: url(../img/stage_main_bg@2x.jpg) no-repeat;
     position: fixed;
     z-index: 30;
 }
-#stage_content.modalWindow > div{
+#stage_content.modalWindow > div#modalWindow_inner{
     margin-top: 104px;
     margin-left: 25px;
 }
@@ -401,6 +409,28 @@ overlay:target+popup {
     height: 227px;
     position: absolute;
     z-index: 38;
+}
+#stage_top_bg{
+    background: url(../img/stage_top_bg@2x.jpg) no-repeat;
+    width: 768px;
+    height: 308px;
+    position: absolute;
+    z-index: 37;
+}
+#stage_curtain_left_bg, #stage_curtain_right_bg{
+    height: 697px;
+    top: 308px;
+    position: absolute;
+    z-index: -2;
+}
+#stage_curtain_left_bg{
+    background: url(../img/stage_curtain_left_bg@2x.png) no-repeat;
+    width: 103px;
+}
+#stage_curtain_right_bg{
+    background: url(../img/stage_curtain_right_bg@2x.png) no-repeat;
+    width: 87px;
+    right: 0;
 }
 #stage_middle{
     background: url(../img/stage_bg@2x.png) no-repeat;
@@ -476,7 +506,7 @@ overlay:target+popup {
     background-image: url(../img/stage_curtain_right@2x.png);
     width: 309px;
     left: 357px;
-    z-index: -2;
+    z-index: -3;
 }
 #rope{
     width: 40px;
@@ -485,7 +515,6 @@ overlay:target+popup {
     right: 22px;
     position: absolute;
     z-index: -1;
-    background-color: green;
 }
 #rope_inner{
     background-image: url(../img/rope@2x.png);
