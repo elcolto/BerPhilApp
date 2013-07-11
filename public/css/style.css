@@ -492,15 +492,15 @@ overlay:target+popup {
     position: absolute;
 }
 #elephant{
-    width: 1523px;
+    width: 1023px;
     height: 503px;
-    left: -1523px;
+    left: -1023px;
     position: absolute;
     z-index: -15;
 }
 #elephant_bg{
     background: url(../img/elephant@2x.png) no-repeat;
-    width: 1117px;
+    width: 617px;
     height: 223px;
     left: 406px;
     top:120px;
