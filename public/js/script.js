@@ -176,34 +176,36 @@ $(document).ready(function(){
 		ev.preventDefault();
 		var stageHeight = $('#stage_middle').height();
 		var stageWidth = $('#stage_middle').width();
-		var wing = $('#angel_wing');
+		var wing = $('#angel_wing'), wingCss;
 		//set initial css forfor wing
-		var wingCss = {
-			top: wing.position().top+'px',
-			left: wing.position().left + 'px',
-			'-webkit-transform': 'rotate(0deg)',
-			'transform': 'rotate(0deg)',
-			'display': 'block'
-		};
+		
+		console.log(wing.position());
+		//console.log(wingCss);
 		if (!angelAnimated) {
 			//start animation of angel, and let fall the wing
 			$('#angel').toggle();
 			$('#angel').animate({
-				top: "+="+$('#angel_body').height()}, 1000);
+				top: "+="+$('#angel_body').height()}, 1500);
 			setTimeout(function(){
-				
-				$('#angel_wing').animate({
-				rotation:45,
-				top: "+=" + Math.round(stageHeight/2),
-				left: "+=" + Math.round(stageWidth/5),
+				wingCss = {
+					top: wing.position().top+'px',
+					left: wing.position().left + 'px',
+					'-webkit-transform': 'rotate(0deg)',
+					'transform': 'rotate(0deg)',
+					'display': 'block'
+				};
+				wing.animate({
+			//	rotation:0,
+				top: "+=" + Math.round(stageHeight/3),
+				left: "+=" + Math.round(stageWidth/7),
 				},
 	  			{
-			    duration: 2500,
+			    duration: 3000,
 			    step: function(now, fx) {
 			     	$(this).css({
 			//      	"transform": "rotate("+now+"deg)"
-			      	'-webkit-transform': 'rotate(' + now + 'deg)',
-		            'transform': 'rotate(' + now + 'deg)',
+			      	'-webkit-transform': 'rotate(' + 1.75*now + 'deg)',
+		            'transform': 'rotate(' + 1.75*now + 'deg)',
 		            'display': 'block'
 			      });
 			    },
@@ -213,17 +215,18 @@ $(document).ready(function(){
 	 			}
 	 			);
 				//$('#angel_wing').animate({top: "+=300"},300);
-			},2500);
+			},3000);
 
 			setTimeout(function(){
 				$('#angel_wing').fadeToggle('slow');
 				setTimeout(function(){
 					$('#angel').animate({
-					top: "-="+$('#angel_body').height()}, 1000);
+					top: "-="+$('#angel_body').height()}, 1500);
 				}, 1000)
 				$('#stage_popup p').html($('#stage_popup p').attr("data-text-angel"));
-				$('#stage_popup').fadeIn(1000);
+				
 				setTimeout(function(){
+					$('#stage_popup').fadeIn(1000);
 					$('#angel').toggle();
 					$('#angel_wing').css(wingCss);
 				},2500)
