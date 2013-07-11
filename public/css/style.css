@@ -463,26 +463,32 @@ overlay:target+popup {
     left: 256px;
 }
 #angel{
-    width: 140px;
-    height: 300px;
     left: 100px;
-    top: -160px;
+    top: -250px;
     position: absolute;
     z-index: -15;
     display: none;
 }
 #angel_body{
-    width: 80px;
-    height: 160px;
-    float: left;
-    background-color: yellow;
+    background: url(../img/angel_body@2x.png) no-repeat;
+    width: 148px;
+    height: 250px;
+    position: absolute;
 }
 #angel_wing{
-    width: 50px;
-    height: 80px;
-    float: right;
-    background-image: -webkit-linear-gradient(top, #68ff4a, #ffadc6);
-    background-image: linear-gradient(top, #68ff4a, #ffadc6);
+    background: url(../img/angel_wing_right@2x.png) no-repeat;
+    width: 120px;
+    height: 96px;
+    left: 48px;
+    top: 58px;
+    position: absolute;
+}
+#angel_wing_left{
+    background: url(../img/angel_wing_left@2x.png) no-repeat;
+    width: 77px;
+    height: 123px;
+    left: -30px;
+    top: 30px;
     position: absolute;
 }
 #stage_popup{

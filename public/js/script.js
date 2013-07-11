@@ -152,20 +152,20 @@ $(document).ready(function(){
 
 	//test
 	var angelAnimated = false;
-	var wing = $('#angel_wing');
-	var wingCss = {
-		top: wing.position().top+'px',
-		left: wing.position().left + 'px',
-		'-webkit-transform': 'rotate(0deg)',
-	    '-moz-transform': 'rotate(0deg)',
-        '-ms-transform': 'rotate(0deg)',
-		'-o-transform': 'rotate(0deg)',
-		'transform': 'rotate(0deg)',
-		'display': 'block'
-	};
 
 	$('#stage_button_1').hammer().on('tap',function(ev){
 		ev.preventDefault();
+		var wing = $('#angel_wing');
+		var wingCss = {
+			top: wing.position().top+'px',
+			left: wing.position().left + 'px',
+			'-webkit-transform': 'rotate(0deg)',
+		    '-moz-transform': 'rotate(0deg)',
+	        '-ms-transform': 'rotate(0deg)',
+			'-o-transform': 'rotate(0deg)',
+			'transform': 'rotate(0deg)',
+			'display': 'block'
+		};
 		if (!angelAnimated) {
 			$('#angel').toggle();
 			$('#angel').animate({
