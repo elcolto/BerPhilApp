@@ -3,6 +3,11 @@ document.ontouchmove = function(e) { e.preventDefault(); }
 
 $(document).ready(function(){
 
+	//ability to reload
+	$('#reload').hammer().on('tap', function(){
+		location.reload();
+	});
+
 	//get heigt and width of content div
 	var screenWidth = $("#content").width(); //$(window).width();
 	var screenHeight = $("#content").height(); //$(window).height();
@@ -63,6 +68,7 @@ $(document).ready(function(){
 						showSpeechBubble = false;
 					}
 				},
+				//creating snapped event to the dragged bean 
 			    drag: function(event, ui) {
 			        var draggable = $(this).data("ui-draggable");
 			        $.each(draggable.snapElements, function(index, element) {
@@ -73,16 +79,17 @@ $(document).ready(function(){
 			            }
 			        });
 			    },
+			    //setting snappable properties
 			    snap: "#cup-snap",
 			    snapMode: 'outer',
-
+			    //by snapping on the snap element toggle the snapped element
 			    snapped: function(event, ui) {
 			        $(this).draggable('disable');
 			       	if ($(this).css('display')!='none'){
 			       		$(this).toggle();
 			       		 beanCounter++;
 			       	}
-			       
+			       	//show text info by snapping all beans
 		        	if(beanCounter==beanArray.length){
 		           		$('#speech_bubble_mhhh').fadeIn(2000);
 		        		setTimeout(function(){
@@ -94,6 +101,7 @@ $(document).ready(function(){
 							}, 2000);
 						}, 3500);
 		        		beanCounter=0;
+		        		//setting functionality by swiping info element an cup
 		        		$('#coffee_sonata').hammer().on('swiperight', kantata_handler);
 		        		$('#cup').hammer().on('swipedown', kantata_handler);
 		        	}
@@ -101,7 +109,7 @@ $(document).ready(function(){
 			});
 		}
 	});
-
+	// setting function to play music and swipe back info text and cup
 	var kantata_handler = function(event){
 		if (!coffeePlayer.paused) {
 			coffeePlayer.pause();
@@ -115,6 +123,7 @@ $(document).ready(function(){
 	};
 
 	$('#coffeplay').hammer().on('tap', function(ev){
+		ev.preventDefault();
 		if (coffeePlayer.paused) {
 			$('#coffeplay').css('background', 'url(./public/img/button_stopMusic@2x.png)');
 			coffeePlayer.play();
@@ -126,57 +135,66 @@ $(document).ready(function(){
 		}
 	});
 	
+	//stage functionality
+	$('#object_stage').hammer().on('tap', function(){
+		$('#rope_inner').addClass('wiggle');
+	});
 
-
+	/*
+	using rope-div by dragging it down to open curtain
+	*/
+	//get position of both curtain
 	var curtainRightPositonLeft = $('#stage_curtain_right').position().left;
 	var curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
+	//set rope draggable to move curtain
 	$('#rope_inner').draggable({ 
 		axis: "y", 
 		containment: "parent",
 
+		start: function(ev, ui){
+			$('#rope_inner').removeClass('wiggle');
+		},
+
 		drag: function(ev, ui){
+			//adding or subtracting distance from curtaon
 			var ropeDeltaY = ui.position.top - ui.originalPosition.top;
 			$('#stage_curtain_right').css({left: curtainRightPositonLeft + Math.round((1.5*ropeDeltaY))});
 			$('#stage_curtain_left').css({left: curtainLeftPositionLeft - Math.round((1.5*ropeDeltaY))});
 		},
-
+		//set var to new position
 		stop: function(ev, ui){
-			console.log("Stop!")
-			console.log("right: "+ $('#stage_curtain_right').position().left);
-			console.log("left: " + $('#stage_curtain_left').position().left)
-			console.log("------------------");
 			curtainRightPositonLeft = $('#stage_curtain_right').position().left;
 			curtainLeftPositionLeft = $('#stage_curtain_left').position().left;
 		}
 	});
 
-	//test
+	//animation of an angel by pressing the first burtton
 	var angelAnimated = false;
 	var wing = $('#angel_wing');
+	//set initial css forfor wing
 	var wingCss = {
 		top: wing.position().top+'px',
 		left: wing.position().left + 'px',
 		'-webkit-transform': 'rotate(0deg)',
-	    '-moz-transform': 'rotate(0deg)',
-        '-ms-transform': 'rotate(0deg)',
-		'-o-transform': 'rotate(0deg)',
 		'transform': 'rotate(0deg)',
 		'display': 'block'
 	};
 
 	$('#stage_button_1').hammer().on('tap',function(ev){
 		ev.preventDefault();
+		var stageHeight = $('#stage_middle').height();
+		var stageWidth = $('#stage_middle').width();
 		if (!angelAnimated) {
+			//start animation of angel, and let fall the wing
 			$('#angel').toggle();
 			$('#angel').animate({
 				top: "+="+$('#angel_body').height()}, 1000);
-			//$('#angel_wing').animate({top: "500px"},300);
 			setTimeout(function(){
 				
 				$('#angel_wing').animate({
-				rotation: 90,
-				top: "+=250",
-				left: "+=50"
+				rotation:45,
+				top: "+=" + Math.round(stageHeight/2),
+				left: "+=" + Math.round(stageWidth/5),
 				},
 	  			{
 			    duration: 2500,
@@ -184,9 +202,6 @@ $(document).ready(function(){
 			     	$(this).css({
 			//      	"transform": "rotate("+now+"deg)"
 			      	'-webkit-transform': 'rotate(' + now + 'deg)',
-	            	'-moz-transform': 'rotate(' + now + 'deg)',
-		            '-ms-transform': 'rotate(' + now + 'deg)',
-		            '-o-transform': 'rotate(' + now + 'deg)',
 		            'transform': 'rotate(' + now + 'deg)',
 		            'display': 'block'
 			      });
@@ -200,15 +215,13 @@ $(document).ready(function(){
 			},2500);
 
 			setTimeout(function(){
-				
 				$('#angel_wing').fadeToggle('slow');
-			//	delay(1);
 				setTimeout(function(){
 					$('#angel').animate({
 					top: "-="+$('#angel_body').height()}, 1000);
 				}, 1000)
 				$('#stage_popup p').html($('#stage_popup p').attr("data-text-angel"));
-				$('#stage_popup').fadeIn('slow');
+				$('#stage_popup').fadeIn(1000);
 				setTimeout(function(){
 					$('#angel').toggle();
 					$('#angel_wing').css(wingCss);
@@ -217,8 +230,19 @@ $(document).ready(function(){
 				angelAnimated = false;
 			//	$('#angel_wing').css(wingCss);
 			},7500);
-
 		}
+	});
+
+	$('#stage_button_2').hammer().on('tap', function(){
+		var elephantWidt = $('#elephant').width();
+		$('#elephant').toggle().delay(200).animate({left: "+=" + elephantWidt}, 4500);
+		$('#stage_popup p').html($('#stage_popup p').attr("data-text-elephant"));
+	//	$('#stage_popup').fadeIn(1000);
+	});
+
+	$('#stage_button_3').hammer().on('tap', function(){
+		$('#stage_popup p').html($('#stage_popup p').attr("data-text-water"));
+		$('#stage_popup').fadeIn(1000);
 	});
 	
 	//closing parent by clicking on close button
